@@ -3,23 +3,31 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.2",
-    "@chakra-ui/react": "^2.2.1",
-    "@chakra-ui/theme-tools": "^2.0.2",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.9.0",
-    "framer-motion": "^6.3.0",
+    "@chakra-ui/icons": "^2.0.9",
+    "@chakra-ui/react": "^2.3.2",
+    "@chakra-ui/theme-tools": "^2.0.11",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@fontsource/space-mono": "^4.5.10",
+    "@rainbow-me/rainbowkit": "^0.5.1",
+    "ethers": "^5.7.0",
+    "framer-motion": "^7.3.2",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "wagmi": "^0.6.5"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.3.0",
+    "eslint-plugin-chakra-ui": "^0.7.3",
     "typescript": "^4.7.2"
   }
 }
