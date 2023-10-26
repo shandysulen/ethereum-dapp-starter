@@ -8,9 +8,16 @@
 # testing
 /coverage
 
+# database
+/prisma/db.sqlite
+/prisma/db.sqlite-journal
+
 # next.js
 /.next/
 /out/
+next-env.d.ts
+analyze
+.turbo
 
 # production
 /build
@@ -26,11 +33,15 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*
+# do not commit any .env files to git, except for the .env file with defaults. https://create.t3.gg/en/usage/env-variables#using-environment-variables
+.env*.local
+local.db
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# turbo
+.turbo

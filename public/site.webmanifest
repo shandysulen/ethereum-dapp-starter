@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/web-manifest.json",
+  "name": "Ethereum Dapp Starter",
+  "short_name": "Ethereum Dapp Starter",
+  "start_url": "/",
+  "description": "A strong foundation for your next unicorn project.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0BC5EA",
+  "background_color": "#010101",
+  "display": "standalone"
+}
