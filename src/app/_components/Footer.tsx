@@ -1,25 +1,32 @@
 import React from "react";
-
-import { Socials } from "@/app/_shared/Socials";
+import { HStack } from "@/components/HStack";
 import { Stack } from "@/components/Stack";
-
+import { GithubLink } from "../_shared/Socials/GithUbLink";
+import { TwitterLink } from "../_shared/Socials/TwitterLink";
 import { Copyright } from "./Footer/Copyright";
 import { Description } from "./Footer/Description";
 import { LogoLink } from "./Footer/LogoLink";
-import { Sitemap } from "./Footer/Sitemap";
 
 /** To be shown at the bottom of every page */
 export const Footer: React.FC = () => {
   return (
-    <Stack
+    <HStack
       as='footer'
-      className='space-between shadow-lg-top relative w-full items-center gap-4 py-5'
+      className='px-[5%] justify-between shadow-lg-top relative w-full items-center gap-4 py-5 h-footer'
     >
-      <LogoLink />
-      <Socials />
+      <Stack>
+        <HStack className='gap-4'>
+          <LogoLink />
+          <HStack className='gap-3'>
+            <TwitterLink username='shando_eth' />
+            <GithubLink href='https://github.com/shandysulen/ethereum-dapp-starter' />
+          </HStack>
+        </HStack>
+        <Copyright />
+      </Stack>
+      {/* <Socials /> */}
       <Description />
-      <Sitemap />
-      <Copyright />
-    </Stack>
+      {/* <Sitemap /> */}
+    </HStack>
   );
 };

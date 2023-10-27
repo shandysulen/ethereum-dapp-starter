@@ -1,7 +1,5 @@
 import { forwardRef } from "react";
-
 import { cn } from "@/utils/cn";
-
 import { buttonVariants } from "./Button";
 
 export interface ExternalLinkProps extends React.ComponentPropsWithoutRef<"a"> {
@@ -20,7 +18,7 @@ export const ExternalLink: React.FC<ExternalLinkProps> = forwardRef<
       <a
         ref={ref}
         className={cn(
-          { "transition-opacity hover:opacity-70": !className },
+          "transition-opacity hover:opacity-70",
           variant === "button" ? buttonVariants() : undefined,
           className,
         )}
