@@ -48,7 +48,6 @@ module.exports = {
       height: {
         footer: "var(--height-footer)",
         header: "var(--height-header)",
-        ticker: "var(--height-ticker)",
       },
       boxShadow: {
         "lg-top":

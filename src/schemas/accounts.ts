@@ -1,5 +1,5 @@
 import { type InferModel } from "drizzle-orm";
-import { char, date, mysqlTable, serial } from "drizzle-orm/mysql-core";
+import { char, date, mysqlTable, serial } from "drizzle-orm/sqlite-core";
 
 export const accounts = mysqlTable("accounts", {
   id: serial("id").primaryKey(),

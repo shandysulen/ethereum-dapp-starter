@@ -13,7 +13,7 @@ export const GithubLink: React.FC<GithubLinkProps> = ({ href }) => {
       href={href}
       className='hover:opacity-70 transition-opacity'
     >
-      <Github />
+      <Github size={18} />
     </ExternalLink>
   );
 };

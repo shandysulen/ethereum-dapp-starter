@@ -1,8 +1,7 @@
 "use client";
 
-import { BookOpen, CircleEllipsis } from "lucide-react";
+import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
 import React from "react";
-
 import { Socials } from "@/app/_shared/Socials";
 import {
   NavigationMenuContent,
@@ -37,7 +36,7 @@ export const INTERNAL_NAV_ITEMS: NavItemProps[] = [
   },
   {
     label: "Help center",
-    icon: <CircleEllipsis size='20px' />,
+    icon: <HelpCircle size='20px' />,
     // icon: <BiBookBookmark size='20px' />,
     href: "/support",
   },

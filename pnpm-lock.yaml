@@ -70,6 +70,9 @@ dependencies:
   '@vercel/analytics':
     specifier: ^1.0.2
     version: 1.0.2
+  axios:
+    specifier: ^1.6.0
+    version: 1.6.0
   bufferutil:
     specifier: ^4.0.7
     version: 4.0.7
@@ -88,6 +91,9 @@ dependencies:
   drizzle-orm:
     specifier: ^0.27.1
     version: 0.27.1(@libsql/client@0.3.4)
+  drizzle-zod:
+    specifier: ^0.5.1
+    version: 0.5.1(drizzle-orm@0.27.1)(zod@3.22.4)
   encoding:
     specifier: ^0.1.13
     version: 0.1.13
@@ -100,11 +106,14 @@ dependencies:
   framer-motion:
     specifier: ^7.3.2
     version: 7.3.2(react-dom@18.2.0)(react@18.2.0)
+  iron-session:
+    specifier: github:renchris/iron-session#v8-as-dependency
+    version: github.com/renchris/iron-session/86b514c85956f00db4975cb9a567d4b236616d09
   lucide-react:
     specifier: ^0.272.0
     version: 0.272.0(react@18.2.0)
   next:
-    specifier: latest
+    specifier: ^14.0.0
     version: 14.0.0(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
   next-axiom:
     specifier: ^1.0.0
@@ -118,6 +127,12 @@ dependencies:
   nprogress:
     specifier: ^0.2.0
     version: 0.2.0
+  posthog-js:
+    specifier: ^1.87.6
+    version: 1.87.6
+  posthog-node:
+    specifier: ^3.1.3
+    version: 3.1.3
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -143,8 +158,8 @@ dependencies:
     specifier: ^0.6.5
     version: 0.6.5(@types/react@18.2.33)(bufferutil@4.0.7)(encoding@0.1.13)(ethers@5.7.0)(react-dom@18.2.0)(react@18.2.0)
   zod:
-    specifier: ^3.21.4
-    version: 3.21.4
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@ianvs/prettier-plugin-sort-imports':
@@ -3784,6 +3799,16 @@ packages:
       - debug
     dev: false
 
+  /axios@1.6.0:
+    resolution: {integrity: sha512-EZ1DYihju9pwVB+jg67ogm+Tmqc6JmhamRN6I4Zt8DfZu5lbcQGw3ozH9lFejSJgs/ibaef3A9PMXPLeefFGJg==}
+    dependencies:
+      follow-redirects: 1.15.3
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /axobject-query@3.2.1:
     resolution: {integrity: sha512-jsyHu61e6N4Vbz/v18DHwWYKK0bSWLqn47eeDSKPB7m8tqMHF9YJ+mhIk2lVteyZrY8tnSj/jHOv4YiTCuCJgg==}
     dependencies:
@@ -4545,7 +4570,7 @@ packages:
       hanji: 0.0.5
       json-diff: 0.9.0
       minimatch: 7.4.6
-      zod: 3.21.4
+      zod: 3.22.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4613,6 +4638,16 @@ packages:
         optional: true
     dependencies:
       '@libsql/client': 0.3.4(bufferutil@4.0.7)(encoding@0.1.13)
+    dev: false
+
+  /drizzle-zod@0.5.1(drizzle-orm@0.27.1)(zod@3.22.4):
+    resolution: {integrity: sha512-C/8bvzUH/zSnVfwdSibOgFjLhtDtbKYmkbPbUCq46QZyZCH6kODIMSOgZ8R7rVjoI+tCj3k06MRJMDqsIeoS4A==}
+    peerDependencies:
+      drizzle-orm: '>=0.23.13'
+      zod: '*'
+    dependencies:
+      drizzle-orm: 0.27.1(@libsql/client@0.3.4)
+      zod: 3.22.4
     dev: false
 
   /duplexer@0.1.2:
@@ -5369,6 +5404,10 @@ packages:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
+    dev: false
+
+  /fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
     dev: false
 
   /file-entry-cache@6.0.1:
@@ -7407,6 +7446,22 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
+  /posthog-js@1.87.6:
+    resolution: {integrity: sha512-ocVNosPVXViFfdRi1VB5IVGLgTvFerIljJ308v9irQ3MZosuegs6tPFFCOefr6RUmyQF2gI/mDbMZafRoFS+KA==}
+    dependencies:
+      fflate: 0.4.8
+    dev: false
+
+  /posthog-node@3.1.3:
+    resolution: {integrity: sha512-UaOOoWEUYTcaaDe1w0fgHW/sXvFr3RO0l7yI7RUDzkZNZCfwXNO9r3pc14d1EtNppF/SHBrV5hNiZZATpf/vUw==}
+    engines: {node: '>=15.0.0'}
+    dependencies:
+      axios: 1.6.0
+      rusha: 0.8.14
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /preact@10.18.1:
     resolution: {integrity: sha512-mKUD7RRkQQM6s7Rkmi7IFkoEHjuFqRQUaXamO61E6Nn7vqF/bo7EZCmSyrUnp2UWHw0O7XjZ2eeXis+m7tf4lg==}
     dev: false
@@ -7525,6 +7580,10 @@ packages:
       object-assign: 4.1.1
       react-is: 16.13.1
     dev: true
+
+  /proxy-from-env@1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
 
   /pump@3.0.0:
     resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
@@ -7856,6 +7915,10 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
     dev: true
+
+  /rusha@0.8.14:
+    resolution: {integrity: sha512-cLgakCUf6PedEu15t8kbsjnwIFFR2D4RfL+W3iWFJ4iac7z4B0ZI8fxy4R3J956kAI68HclCFGL8MPoUVC3qVA==}
+    dev: false
 
   /rxjs@6.6.7:
     resolution: {integrity: sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==}
@@ -9010,8 +9073,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.21.4:
-    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
 
   /zustand@4.4.4(@types/react@18.2.33)(react@18.2.0):
     resolution: {integrity: sha512-5UTUIAiHMNf5+mFp7/AnzJXS7+XxktULFN0+D1sCiZWyX7ZG+AQpqs2qpYrynRij4QvoDdCD+U+bmg/cG3Ucxw==}
@@ -9031,4 +9094,10 @@ packages:
       '@types/react': 18.2.33
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  github.com/renchris/iron-session/86b514c85956f00db4975cb9a567d4b236616d09:
+    resolution: {tarball: https://codeload.github.com/renchris/iron-session/tar.gz/86b514c85956f00db4975cb9a567d4b236616d09}
+    name: iron-session
+    version: 8.0.0-alpha.0
     dev: false

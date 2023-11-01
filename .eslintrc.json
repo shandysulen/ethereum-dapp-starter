@@ -18,7 +18,15 @@
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   "rules": {
     "@typescript-eslint/no-misused-promises": "warn",
-    "@typescript-eslint/restrict-template-expressions": ["error", { "allowNumber": true, "allowBoolean": true, "allowAny": true, "allowNullish": true }],
+    "@typescript-eslint/restrict-template-expressions": [
+      "error",
+      {
+        "allowNumber": true,
+        "allowBoolean": true,
+        "allowAny": true,
+        "allowNullish": true
+      }
+    ],
     "react/display-name": "off"
   }
 }

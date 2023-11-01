@@ -1,5 +1,6 @@
 import { HStack } from "@/components/HStack";
 import { cn } from "@/utils/cn";
+import { GithubLink } from "./Socials/GithubLink";
 import { TwitterLink } from "./Socials/TwitterLink";
 
 export interface SocialsProps {
@@ -8,8 +9,9 @@ export interface SocialsProps {
 
 export const Socials: React.FC<SocialsProps> = ({ className }) => {
   return (
-    <HStack className={cn("text-primary gap-5", className)}>
-      <TwitterLink username='' />
+    <HStack className={cn("gap-3", className)}>
+      <TwitterLink username='shando_eth' />
+      <GithubLink href='https://github.com/shandysulen/ethereum-dapp-starter' />
     </HStack>
   );
 };

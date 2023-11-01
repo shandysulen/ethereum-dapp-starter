@@ -21,11 +21,7 @@ const config = {
   experimental: {
     typedRoutes: false,
     swcPlugins: [["next-superjson-plugin", {}]],
-    serverComponentsExternalPackages: ["@libsql/client", "pino"],
-    logging: {
-      level: "verbose",
-      fullUrl: true,
-    },
+    // serverComponentsExternalPackages: ["@libsql/client"],
   },
 };
 export default withAxiom(withBundleAnalyzer(config));

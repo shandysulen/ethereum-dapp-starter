@@ -1,13 +1,14 @@
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { AxiomWebVitals } from "next-axiom";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import { Toaster } from "@/components/Toaster";
 import { Footer } from "./_components/Footer";
 import { LoadingBar } from "./_components/LoadingBar";
 import { Navbar } from "./_components/Navbar";
 import "./globals.css";
-import { Providers } from "./providers";
+import { PostHogPageview, Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
   description: "A strong foundation for your next unicorn project.",
   generator: "Next.js",
   manifest: "/site.webmanifest",
+  metadataBase: new URL(
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000",
+  ),
   openGraph: {
     title: "Ethereum Dapp Starter",
     description: "A strong foundation for your next unicorn project.",
@@ -25,7 +31,6 @@ export const metadata: Metadata = {
     type: "website",
     images: [],
   },
-  themeColor: "#FFFFFF",
   title: {
     template: "%s | Ethereum Dapp Starter",
     default: "A strong foundation for your next unicorn project.",
@@ -38,6 +43,10 @@ export const metadata: Metadata = {
     creatorId: "",
     images: [""],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({
@@ -57,6 +66,9 @@ export default function RootLayout({
         </Providers>
         <Analytics />
         <AxiomWebVitals />
+        <Suspense>
+          <PostHogPageview />
+        </Suspense>
       </body>
     </html>
   );
