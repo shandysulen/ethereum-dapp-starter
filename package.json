@@ -55,7 +55,7 @@
     "framer-motion": "^7.3.2",
     "iron-session": "github:renchris/iron-session#v8-as-dependency",
     "lucide-react": "^0.272.0",
-    "next": "^14.0.0",
+    "next": "^14.0.1",
     "next-axiom": "^1.0.0",
     "next-superjson-plugin": "^0.5.9",
     "next-themes": "^0.2.1",
