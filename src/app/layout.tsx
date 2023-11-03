@@ -50,21 +50,6 @@ export const viewport: Viewport = {
   themeColor: "#FFFFFF",
 };
 
-// console.log("chains");
-// console.log(chains);
-
-// const { connectors } = getDefaultWallets({
-//   appName: "Ethereum Dapp Starter",
-//   projectId: "YOUR_PROJECT_ID",
-//   chains,
-// });
-
-// const wagmiConfig = createConfig({
-//   autoConnect: true,
-//   connectors,
-//   publicClient,
-// });
-
 export default function RootLayout({
   children,
 }: {
