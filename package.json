@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "build:analyze": "set ANALYZE=true & next build",
+    "build:analyze": "set ANALYZE=true && next build",
     "clean:analyze": "rimraf analyze",
     "clean:next": "rimraf .next",
     "clean:modules": "rimraf node_modules",
@@ -88,6 +88,7 @@
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "autoprefixer": "^10.4.15",
+    "cross-env": "^7.0.3",
     "drizzle-kit": "^0.19.3",
     "eslint": "8.23.0",
     "eslint-config-next": "12.3.0",
