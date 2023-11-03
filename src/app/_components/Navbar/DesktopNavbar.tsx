@@ -7,12 +7,7 @@ import {
 import { LogoLink } from "../Footer/LogoLink";
 import { OverflowNav } from "./OverflowNav";
 
-export interface DesktopNavbarProps {
-  readonly isDarkMode?: boolean;
-  readonly isScrolled?: boolean;
-}
-
-export const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ isDarkMode }) => {
+export const DesktopNavbar: React.FC = () => {
   return (
     <HStack
       className='h-header min-h-[60px] w-full justify-between px-[5%] py-4'
