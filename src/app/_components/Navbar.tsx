@@ -1,5 +1,4 @@
 import { memo } from "react";
-
 import { DesktopNavbar } from "./Navbar/DesktopNavbar";
 
 export interface NavbarProps {
@@ -18,7 +17,7 @@ export const Navbar: React.FC<NavbarProps> = memo(function Navbar({
       {/* {["base", "sm"].includes(breakpoint) ? (
         <MobileNavbar />
       )} */}
-      <DesktopNavbar isDarkMode={isDarkMode} isScrolled={isScrolled} />
+      <DesktopNavbar />
     </header>
   );
 });
