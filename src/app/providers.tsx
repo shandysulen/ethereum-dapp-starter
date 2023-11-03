@@ -11,19 +11,17 @@ import { arbitrum, base, mainnet, optimism, polygon, zora } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { TooltipProvider } from "@/components/Tooltip";
+import { env } from "@/env.mjs";
 import TrpcQueryClientProvider from "./_trpc/TrpcQueryClientProvider";
 
 const { chains, publicClient } = configureChains(
   [mainnet, polygon, optimism, arbitrum, base, zora],
-  [
-    alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_ID }),
-    publicProvider(),
-  ],
+  [alchemyProvider({ apiKey: env.NEXT_PUBLIC_ALCHEMY_ID }), publicProvider()],
 );
 
 const { connectors } = getDefaultWallets({
   appName: "Ethereum Dapp Starter",
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
+  projectId: env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
   chains,
 });
 
@@ -34,8 +32,8 @@ const wagmiConfig = createConfig({
 });
 
 if (typeof window !== "undefined") {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+  posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
+    api_host: env.NEXT_PUBLIC_POSTHOG_HOST,
     capture_pageview: false, // Disable automatic pageview capture, as we capture manually
   });
 }

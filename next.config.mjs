@@ -1,6 +1,7 @@
 // @ts-check
 import bundleAnalyzer from "@next/bundle-analyzer";
 import { withAxiom } from "next-axiom";
+import "./src/env.mjs";
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: !!process.env.ANALYZE,
