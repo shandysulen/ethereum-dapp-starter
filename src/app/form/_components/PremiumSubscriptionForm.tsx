@@ -16,7 +16,6 @@ import {
   FormMessage,
 } from "@/components/Form";
 import { Input } from "@/components/Input";
-import { submit } from "../../_actions/submit";
 
 const formSchema = z
   .object({
@@ -48,7 +47,7 @@ export const PremiumSubscriptionForm: React.FC = () => {
 
   return (
     <Form {...form}>
-      <form action={submit}>
+      <form>
         <FormField
           control={form.control}
           name='name'

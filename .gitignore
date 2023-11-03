@@ -18,6 +18,7 @@
 next-env.d.ts
 analyze
 .turbo
+.swc
 
 # production
 /build
@@ -42,6 +43,3 @@ local.db
 
 # typescript
 *.tsbuildinfo
-
-# turbo
-.turbo

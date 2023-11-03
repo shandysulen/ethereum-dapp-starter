@@ -1,14 +1,15 @@
 "use client";
 
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { usePostHog } from "posthog-js/react";
 import { Button } from "@/components/Button";
 
-export interface ConnectButtonProps {}
-
-export const ConnectButton: React.FC<ConnectButtonProps> = () => {
+export const ConnectButton: React.FC = () => {
+  const { openConnectModal } = useConnectModal();
   const posthog = usePostHog();
 
   const connect = () => {
+    openConnectModal();
     posthog?.capture("clicked_connect");
   };
 

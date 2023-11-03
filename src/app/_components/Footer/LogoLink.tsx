@@ -1,12 +1,12 @@
-import { Logo } from "@/components/Logo";
 import NextLink from "next/link";
+import { Logo } from "@/components/Logo";
 
 export const LogoLink: React.FC = () => {
   // const logoType = useColorModeValue("black", "white");
 
   return (
     <NextLink href='/'>
-      <Logo color={"black"} />
+      <Logo />
     </NextLink>
   );
 };

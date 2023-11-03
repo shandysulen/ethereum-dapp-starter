@@ -1,6 +1,6 @@
 # Ethereum Dapp Starter
 
-_Ethereum Dapp Starter is an opinionated boilerplate Next.js 14 starter kit for production-ready Ethereum dapps. This repository is expected to evolve over time. Questions and suggestions are always welcomed._
+_Ethereum Dapp Starter is an opinionated boilerplate Next.js 14 starter kit for production-ready Ethereum dapps with a focus on edge compute/storage and end-to-end type safety. This repository is expected to evolve over time. Questions and suggestions are always welcomed._
 
 ## Stack
 
@@ -12,7 +12,7 @@ _Ethereum Dapp Starter is an opinionated boilerplate Next.js 14 starter kit for 
 - [`wagmi` React Hooks](https://wagmi.sh/) + [Rainbow Kit](https://www.rainbowkit.com/)
 - [`iron-session (stateless cookies)`](https://github.com/vvo/iron-session/tree/v8)
 - [Drizzle](https://orm.drizzle.team/) and [Turso](https://turso.tech/)
-- [Jest](https://jestjs.io)
+- [Jest](https://jestjs.io) + [Testing Library](https://testing-library.com/)
 
 ## Try it out
 
@@ -25,6 +25,7 @@ $ pnpx create-next-app --example https://github.com/shandysulen/ethereum-dapp-st
 🌐 Edge runtime with Next.js, Vercel, and Turso
 🦺 End-to-end type-safe APIs with tRPC
 🐗 Scaffolded with [PostHog](https://posthog.com)
+🧪 Testing configuration to work across functions and React components
 🔤 Starts with [Inter](https://rsms.me/inter/) fonts
 💨 [Turbo](https://turbo.build/repo)-powered
 🧼 Opinionated [ESLint](https://eslint.org/) config extending Next.js's config

@@ -5,7 +5,7 @@ import { ConnectButton } from "./_components/ConnectButton";
 import { Description } from "./_components/Description";
 import { LearnMoreButton } from "./_components/LearnMoreButton";
 
-export default async function Index() {
+export default function Index() {
   return (
     <Container
       size='xl'

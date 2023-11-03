@@ -1,13 +1,10 @@
-import NextLink from "next/link";
 import React from "react";
-
 import { HStack } from "@/components/HStack";
-import { Logo } from "@/components/Logo";
 import {
   NavigationMenu,
   NavigationMenuList,
 } from "@/components/NavigationMenu";
-
+import { LogoLink } from "../Footer/LogoLink";
 import { OverflowNav } from "./OverflowNav";
 
 export interface DesktopNavbarProps {
@@ -24,9 +21,7 @@ export const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ isDarkMode }) => {
       // color={isDarkMode ? "white" : "black"}
       // shadow={isDarkMode ? "none" : "sm"}
     >
-      <NextLink href='/'>
-        <Logo color={isDarkMode ? "white" : "black"} />
-      </NextLink>
+      <LogoLink />
       <NavigationMenu position='right'>
         <NavigationMenuList>
           <OverflowNav />
