@@ -17,7 +17,7 @@ _Ethereum Dapp Starter is an opinionated boilerplate Next.js 14 starter kit for 
 ## Try it out
 
 ```bash
-$ pnpx create-next-app --example https://github.com/shandysulen/ethereum-dapp-starter
+$ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-starter
 ```
 
 ## Features
