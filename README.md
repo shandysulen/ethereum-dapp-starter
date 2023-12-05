@@ -24,6 +24,7 @@ $ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-st
 
 - 🌐 Edge runtime with Next.js, Vercel, and Turso
 - 🦺 End-to-end type-safe APIs with tRPC
+- Monorepo-ready with `pnpm` workspaces and Turbo
 - Theme-enabled (`next-themes`)
 - Loading bar for async operations (`nprogress`)
 - 🐗 Scaffolded with [PostHog](https://posthog.com)
