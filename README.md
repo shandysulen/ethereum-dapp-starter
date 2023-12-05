@@ -22,12 +22,15 @@ $ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-st
 
 ## Features
 
-🌐 Edge runtime with Next.js, Vercel, and Turso
-🦺 End-to-end type-safe APIs with tRPC
-🐗 Scaffolded with [PostHog](https://posthog.com)
-🧪 Testing configuration to work across functions and React components
-🔤 Starts with [Inter](https://rsms.me/inter/) fonts
-💨 [Turbo](https://turbo.build/repo)-powered
-🧼 Opinionated [ESLint](https://eslint.org/) config extending Next.js's config
-✨ Opinionated [Prettier]() config to sort imports and Tailwind classes
-🐶 [Husky](https://typicode.github.io/husky/) pre-commit hook
+- 🌐 Edge runtime with Next.js, Vercel, and Turso
+- 🦺 End-to-end type-safe APIs with tRPC
+- Theme-enabled (`next-themes`)
+- Loading bar for async operations (`nprogress`)
+- 🐗 Scaffolded with [PostHog](https://posthog.com)
+- 🧪 Testing configuration to work across all Typescript (.ts, .tsx) source code
+- 🌀 [Lucide](https://lucide.dev/) icon library
+- 🔤 Starts with [Inter](https://rsms.me/inter/) fonts
+- 💨 [Turbo](https://turbo.build/repo)-powered
+- 🧼 Opinionated [ESLint](https://eslint.org/) config extending Next.js's config
+- ✨ Opinionated [Prettier]() config to sort imports and Tailwind classes
+- 🐶 [Husky](https://typicode.github.io/husky/) pre-commit hook
