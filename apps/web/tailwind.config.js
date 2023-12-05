@@ -3,7 +3,7 @@ module.exports = {
   darkMode: ["class"],
   content: [
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@ethereum-dapp-starter/components/src/**/*.{ts,tsx}",
+    "./node_modules/@eds/components/src/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {

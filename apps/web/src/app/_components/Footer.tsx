@@ -1,4 +1,4 @@
-import { HStack, Stack } from "@ethereum-dapp-starter/components";
+import { HStack, Stack } from "@eds/components";
 import { GithubLink } from "../_shared/Socials/GithubLink";
 import { TwitterLink } from "../_shared/Socials/TwitterLink";
 import { Copyright } from "./Footer/Copyright";

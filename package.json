@@ -1,16 +1,16 @@
 {
-  "name": "@ethereum-dapp-starter/workspace",
+  "name": "@eds/workspace",
   "private": true,
   "scripts": {
     "build": "next build",
-    "build:db": "pnpm --filter @ethereum-dapp-starter/db build",
-    "build:components": "pnpm --filter @ethereum-dapp-starter/components build",
+    "build:db": "pnpm --filter @eds/db build",
+    "build:components": "pnpm --filter @eds/components build",
     "clean:modules": "rimraf node_modules",
     "clean": "pnpm clean:modules",
-    "clean:components:dist": "pnpm --filter @ethereum-dapp-starter/components clean:dist",
-    "clean:components:modules": "pnpm --filter @ethereum-dapp-starter/components clean:modules",
+    "clean:components:dist": "pnpm --filter @eds/components clean:dist",
+    "clean:components:modules": "pnpm --filter @eds/components clean:modules",
     "clean:components": "pnpm clean:components:dist && pnpm clean:components:modules",
-    "clean:web:next": "pnpm --filter @ethereum-dapp-starter/web clean:next",
-    "dev:web": "pnpm --filter @ethereum-dapp-starter/web dev"
+    "clean:web:next": "pnpm --filter @eds/web clean:next",
+    "dev:web": "pnpm --filter @eds/web dev"
   }
 }

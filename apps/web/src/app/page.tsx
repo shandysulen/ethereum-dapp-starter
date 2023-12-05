@@ -1,4 +1,4 @@
-import { Container, Heading, HStack } from "@ethereum-dapp-starter/components";
+import { Container, Heading, HStack } from "@eds/components";
 import React from "react";
 import { ConnectButton } from "./_components/ConnectButton";
 import { Description } from "./_components/Description";

@@ -1,5 +1,5 @@
 {
-  "name": "@ethereum-dapp-starter/components",
+  "name": "@eds/components",
   "version": "1.0.0",
   "description": "Component library for Ethereum Dapp Starter",
   "main": "src/index.ts",

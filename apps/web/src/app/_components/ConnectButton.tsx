@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@ethereum-dapp-starter/components";
+import { Button } from "@eds/components";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { usePostHog } from "posthog-js/react";
 

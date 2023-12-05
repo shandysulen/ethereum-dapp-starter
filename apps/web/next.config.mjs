@@ -10,7 +10,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages: ["@ethereum-dapp-starter/components"],
+  transpilePackages: ["@eds/components"],
   images: {
     remotePatterns: [
       {

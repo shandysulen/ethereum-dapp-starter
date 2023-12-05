@@ -1,4 +1,4 @@
-import { Button } from "@ethereum-dapp-starter/components";
+import { Button } from "@eds/components";
 
 export const LearnMoreButton: React.FC = () => {
   return (
