@@ -68,7 +68,7 @@ export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
       <TrpcQueryClientProvider>
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains}>
-            <ThemeProvider defaultTheme='light' attribute='class'>
+            <ThemeProvider defaultTheme='system' attribute='class'>
               <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
             </ThemeProvider>
           </RainbowKitProvider>
