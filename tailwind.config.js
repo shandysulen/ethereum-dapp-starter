@@ -49,6 +49,9 @@ module.exports = {
         footer: "var(--height-footer)",
         header: "var(--height-header)",
       },
+      zIndex: {
+        "loading-bar": 10,
+      },
       boxShadow: {
         "lg-top":
           "0 -10px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1)",
