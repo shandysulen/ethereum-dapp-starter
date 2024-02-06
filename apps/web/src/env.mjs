@@ -5,6 +5,7 @@ export const env = createEnv({
   server: {
     DB_URL: z.string().url(),
     DB_AUTH_TOKEN: z.string().min(1),
+    PASSWORD: z.string().min(32), // iron-session requires a password at least 32 chars
   },
   client: {
     NEXT_PUBLIC_ALCHEMY_ID: z.string().min(1),
