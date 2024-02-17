@@ -1,35 +1,58 @@
 "use client";
 
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {
+  ConnectKitProvider,
+  getDefaultConfig,
+  SIWEConfig,
+  SIWEProvider,
+} from "connectkit";
 import { ThemeProvider } from "next-themes";
 import { usePathname, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 import { PropsWithChildren, useEffect } from "react";
-import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { arbitrum, base, mainnet, optimism, polygon, zora } from "wagmi/chains";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
+import { SiweMessage } from "siwe";
+import { createConfig, http, WagmiProvider } from "wagmi";
+import { mainnet } from "wagmi/chains";
 import { TooltipProvider } from "@/components/Tooltip";
 import { env } from "@/env.mjs";
 import TrpcQueryClientProvider from "./_trpc/TrpcQueryClientProvider";
 
-const { chains, publicClient } = configureChains(
-  [mainnet, polygon, optimism, arbitrum, base, zora],
-  [alchemyProvider({ apiKey: env.NEXT_PUBLIC_ALCHEMY_ID }), publicProvider()],
+const wagmiConfig = createConfig(
+  getDefaultConfig({
+    chains: [mainnet],
+    transports: {
+      [mainnet.id]: http(),
+    },
+    appName: "EDS",
+    walletConnectProjectId: "",
+  }),
 );
 
-const { connectors } = getDefaultWallets({
-  appName: "Ethereum Dapp Starter",
-  projectId: env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
-  chains,
-});
-
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-});
+const siweConfig: SIWEConfig = {
+  getNonce: async () => fetch("/api/siwe/nonce").then((res) => res.text()),
+  createMessage: ({ nonce, address, chainId }) =>
+    new SiweMessage({
+      version: "1",
+      domain: window.location.host,
+      uri: window.location.origin,
+      address,
+      chainId,
+      nonce,
+      statement: "Sign in With Ethereum.",
+    }).prepareMessage(),
+  verifyMessage: async ({ message, signature }) =>
+    fetch("/api/siwe/verify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message, signature }),
+    }).then((res) => res.ok),
+  getSession: async () =>
+    fetch("/api/siwe/session").then((res) => (res.ok ? res.json() : null)),
+  signOut: async () => fetch("/api/siwe/logout").then((res) => res.ok),
+};
 
 if (typeof window !== "undefined") {
   posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
@@ -65,15 +88,17 @@ export function PHProvider({ children }) {
 export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <PHProvider>
-      <TrpcQueryClientProvider>
-        <WagmiConfig config={wagmiConfig}>
-          <RainbowKitProvider chains={chains}>
-            <ThemeProvider defaultTheme='system' attribute='class'>
-              <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
-            </ThemeProvider>
-          </RainbowKitProvider>
-        </WagmiConfig>
-      </TrpcQueryClientProvider>
+      <WagmiProvider config={wagmiConfig}>
+        <TrpcQueryClientProvider>
+          <SIWEProvider {...siweConfig}>
+            <ConnectKitProvider>
+              <ThemeProvider defaultTheme='system' attribute='class'>
+                <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+              </ThemeProvider>
+            </ConnectKitProvider>
+          </SIWEProvider>
+        </TrpcQueryClientProvider>
+      </WagmiProvider>
     </PHProvider>
   );
 };

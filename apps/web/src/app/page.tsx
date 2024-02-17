@@ -1,6 +1,7 @@
+"use client";
+
 import { Container, Heading, HStack } from "@eds/components";
-import React from "react";
-import { ConnectButton } from "./_components/ConnectButton";
+import { ConnectKitButton } from "connectkit";
 import { Description } from "./_components/Description";
 import { LearnMoreButton } from "./_components/LearnMoreButton";
 
@@ -13,7 +14,7 @@ export default function Index() {
       <Heading>Build the future.</Heading>
       <Description />
       <HStack role='group' className='mt-4'>
-        <ConnectButton />
+        <ConnectKitButton />
         <LearnMoreButton />
       </HStack>
     </Container>

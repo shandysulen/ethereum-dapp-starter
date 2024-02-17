@@ -9,7 +9,6 @@ import { LoadingBar } from "./_components/LoadingBar";
 import { Navbar } from "./_components/Navbar";
 import "./globals.css";
 import { PostHogPageview, Providers } from "./providers";
-import "@rainbow-me/rainbowkit/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
