@@ -5,6 +5,15 @@ export { Button } from "./components/Button";
 export { Container } from "./components/Container";
 export { Checkbox } from "./components/Checkbox";
 export { Center } from "./components/Center";
+export {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from "./components/Dialog";
 export { ExternalLink } from "./components/ExternalLink";
 export {
   Form,
@@ -41,6 +50,7 @@ export {
   TableHeader,
   TableRow,
 } from "./components/Table";
+export { Textarea } from "./components/Textarea";
 export { Tooltip, TooltipProvider } from "./components/Tooltip";
 export {
   Toast,
