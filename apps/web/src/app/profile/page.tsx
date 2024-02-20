@@ -1,15 +1,10 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
-import { Container } from "@/components/Container";
-import { Heading } from "@/components/Heading";
+import { Container, Heading } from "@eds/components";
+import { useAccount } from "wagmi";
 
 export default function ProfilePage() {
-  const { data } = useQuery(["status"], () =>
-    fetch("/api/auth").then((res) => res.json()),
-  );
-
-  console.log(data);
+  const { address } = useAccount();
 
   return (
     <Container
@@ -20,7 +15,7 @@ export default function ProfilePage() {
       <div className='flex flex-col gap-4'>
         <div>
           <h3 className='text-lg font-semibold'>User</h3>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
+          <span>{address}</span>
         </div>
       </div>
     </Container>

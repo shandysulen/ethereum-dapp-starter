@@ -1,5 +1,6 @@
-import { PropsWithChildren } from "react";
+"use client";
 
+import { PropsWithChildren } from "react";
 import { cn } from "@/utils/cn";
 
 export interface ContainerProps {

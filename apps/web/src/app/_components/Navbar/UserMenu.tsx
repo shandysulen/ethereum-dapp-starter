@@ -1,11 +1,9 @@
-import React from "react";
-
 import {
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuTrigger,
-} from "@/components/NavigationMenu";
-
+} from "@eds/components";
+import React from "react";
 import { LogOutMenuItem } from "./UserMenu/LogOutMenuItem";
 import { ProfileMenuItem } from "./UserMenu/ProfileMenuItem";
 import { UserMenuButton } from "./UserMenuButton";

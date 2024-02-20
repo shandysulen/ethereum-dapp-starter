@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { AsProps } from "@/types/as";
 import { cn } from "@/utils/cn";

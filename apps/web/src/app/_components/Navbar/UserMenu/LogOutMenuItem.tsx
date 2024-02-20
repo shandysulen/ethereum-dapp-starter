@@ -1,7 +1,6 @@
+import { NavigationMenuContentButtonItem } from "@eds/components";
 import { LogOut } from "lucide-react";
 import React from "react";
-
-import { NavigationMenuContentButtonItem } from "@/components/NavigationMenu";
 
 export const LogOutMenuItem: React.FC = () => {
   return (

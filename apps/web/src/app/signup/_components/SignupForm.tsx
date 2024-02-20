@@ -1,10 +1,7 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Button } from "@/components/Button";
 import {
+  Button,
   Form,
   FormControl,
   FormDescription,
@@ -12,8 +9,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/Form";
-import { Input } from "@/components/Input";
+  Input,
+} from "@eds/components";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 const formSchema = z
   .object({
@@ -48,7 +48,7 @@ export const SignupForm: React.FC = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={void form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name='username'

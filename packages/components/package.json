@@ -16,7 +16,7 @@
   "author": "shandysulen",
   "license": "UNLICENSED",
   "dependencies": {
-    "@hookform/resolvers": "^3.3.1",
+    "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -33,16 +33,19 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "cmdk": "^0.2.0",
     "ethereum-blockies-base64": "^1.0.2",
     "lucide-react": "^0.272.0",
     "next": "^14.0.1",
     "react": "^18.2.0",
+    "react-hook-form": "^7.50.1",
     "tailwind-merge": "^1.14.0"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0"
+    "@types/react": "^18.2.0",
+    "typescript": "^5.2.2"
   }
 }

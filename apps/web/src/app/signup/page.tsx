@@ -1,5 +1,4 @@
-import { Container } from "@/components/Container";
-import { Heading } from "@/components/Heading";
+import { Container, Heading } from "@eds/components";
 import { SignupForm } from "./_components/SignupForm";
 
 export default function SignupPage() {

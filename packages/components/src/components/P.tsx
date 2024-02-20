@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from "react";
-
-import { PropsWithClassName } from "@/types/classname";
+import { PropsWithClassName } from "@/types/className";
 import { cn } from "@/utils/cn";
 
 export interface PProps extends PropsWithChildren, PropsWithClassName {}

@@ -2,7 +2,7 @@
 
 import { Check, X } from "lucide-react";
 import React from "react";
-import { useToast } from "@/hooks/useToast";
+import { useToast } from "../hooks/useToast";
 import { Spinner } from "./Spinner";
 import { Stack } from "./Stack";
 import {

@@ -1,15 +1,15 @@
 "use client";
 
-import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
-import React from "react";
-import { Socials } from "@/app/_shared/Socials";
 import {
   NavigationMenuContent,
   NavigationMenuContentLinkItem,
   NavigationMenuItem,
   NavigationMenuTrigger,
-} from "@/components/NavigationMenu";
-import { Separator } from "@/components/Separator";
+  Separator,
+} from "@eds/components";
+import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
+import React from "react";
+import { Socials } from "@/app/_shared/Socials";
 import { useTriggerFix } from "@/hooks/useTriggerFix";
 
 export interface NavItemProps {

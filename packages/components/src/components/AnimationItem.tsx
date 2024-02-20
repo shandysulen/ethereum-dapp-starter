@@ -1,4 +1,7 @@
+"use client";
+
 import { motion, type HTMLMotionProps, type Variants } from "framer-motion";
+import React, { PropsWithChildren } from "react";
 
 export const animationItemVariants: Variants = {
   hidden: {
@@ -13,7 +16,11 @@ export const animationItemVariants: Variants = {
   },
 };
 
-export const AnimationItem: React.FC<HTMLMotionProps<"div">> = ({
+interface AnimationItemProps extends HTMLMotionProps<"div">, PropsWithChildren {
+  readonly className: string;
+}
+
+export const AnimationItem: React.FC<AnimationItemProps> = ({
   children,
   ...props
 }) => {

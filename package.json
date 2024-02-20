@@ -3,14 +3,20 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "build:db": "pnpm --filter @eds/db build",
     "build:components": "pnpm --filter @eds/components build",
+    "build:components:watch": "pnpm --filter @eds/components build:watch",
+    "build:db": "pnpm --filter @eds/db build",
+    "build:web": "pnpm --filter @eds/web build",
     "clean:modules": "rimraf node_modules",
     "clean": "pnpm clean:modules",
     "clean:components:dist": "pnpm --filter @eds/components clean:dist",
     "clean:components:modules": "pnpm --filter @eds/components clean:modules",
     "clean:components": "pnpm clean:components:dist && pnpm clean:components:modules",
+    "clean:web:modules": "pnpm --filter @eds/web clean:modules",
     "clean:web:next": "pnpm --filter @eds/web clean:next",
     "dev:web": "pnpm --filter @eds/web dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }

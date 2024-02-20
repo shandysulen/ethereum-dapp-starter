@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
-
 import { AsProps } from "@/types/as";
-import { PropsWithClassName } from "@/types/classname";
+import { PropsWithClassName } from "@/types/className";
 import { IdProps } from "@/types/id";
 import { cn } from "@/utils/cn";
 

@@ -1,5 +1,7 @@
-import { cn } from "@/utils/cn";
+"use client";
+
 import * as React from "react";
+import { cn } from "@/utils/cn";
 
 export const Center = React.forwardRef<
   React.ElementRef<"div">,

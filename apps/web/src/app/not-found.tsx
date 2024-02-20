@@ -1,7 +1,4 @@
-import { Center } from "@/components/Center";
-import { HStack } from "@/components/HStack";
-import { Heading } from "@/components/Heading";
-import { Separator } from "@/components/Separator";
+import { Center, Heading, HStack, Separator } from "@eds/components";
 
 export default function NotFound() {
   return (

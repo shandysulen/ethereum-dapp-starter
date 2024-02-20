@@ -1,12 +1,9 @@
 // react-hook-form needs `createContext()`
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Button } from "@/components/Button";
-import { Checkbox } from "@/components/Checkbox";
 import {
+  Button,
+  Checkbox,
   Form,
   FormControl,
   FormDescription,
@@ -14,16 +11,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/Form";
-import { Input } from "@/components/Input";
+  Input,
+} from "@eds/components";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
-const formSchema = z
-  .object({
-    name: z.string().min(1, "Must provide a name."),
-    email: z.string().email(),
-    yearly: z.boolean(),
-  })
-  .required();
+const formSchema = z.object({
+  name: z.string().min(1, "Must provide a name."),
+  email: z.string().email(),
+  yearly: z.boolean(),
+});
 
 export type FormSchema = z.infer<typeof formSchema>;
 
@@ -37,17 +35,15 @@ export const PremiumSubscriptionForm: React.FC = () => {
     },
   });
 
-  // => { [k: string]: number }
-
-  // function onSubmit(data: FormSchema) {
-  //   Object.entries(data).forEach(([key, value]) => {
-  //     console.log(`${key}: ${value}`);
-  //   });
-  // }
+  function onSubmit(data: FormSchema) {
+    Object.entries(data).forEach(([key, value]) => {
+      console.log(`${key}: ${value}`);
+    });
+  }
 
   return (
     <Form {...form}>
-      <form>
+      <form onSubmit={void form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name='name'

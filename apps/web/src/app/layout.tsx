@@ -1,9 +1,9 @@
+import { Toaster } from "@eds/components";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { AxiomWebVitals } from "next-axiom";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import { Toaster } from "@/components/Toaster";
 import { Footer } from "./_components/Footer";
 import { LoadingBar } from "./_components/LoadingBar";
 import { Navbar } from "./_components/Navbar";

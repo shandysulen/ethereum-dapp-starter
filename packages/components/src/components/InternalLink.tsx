@@ -1,6 +1,8 @@
+"use client";
+
 import { cva } from "class-variance-authority";
 import NextLink, { LinkProps } from "next/link";
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 import { PropsWithClassName } from "@/types/className";
 import { cn } from "@/utils/cn";
 

@@ -1,6 +1,4 @@
-import { Avatar } from "@/components/Avatar";
-import { Button } from "@/components/Button";
-import { HStack } from "@/components/HStack";
+import { Avatar, Button, HStack } from "@eds/components";
 
 export const UserMenuButton: React.FC = ({}) => (
   <Button className='rounded-full border border-slate-200 bg-slate-50'>

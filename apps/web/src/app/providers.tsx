@@ -1,5 +1,6 @@
 "use client";
 
+import { TooltipProvider } from "@eds/components";
 import {
   ConnectKitProvider,
   getDefaultConfig,
@@ -14,7 +15,6 @@ import { PropsWithChildren, useEffect } from "react";
 import { SiweMessage } from "siwe";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import { mainnet } from "wagmi/chains";
-import { TooltipProvider } from "@/components/Tooltip";
 import { env } from "@/env.mjs";
 import TrpcQueryClientProvider from "./_trpc/TrpcQueryClientProvider";
 
@@ -81,9 +81,9 @@ export function PostHogPageview() {
   return null;
 }
 
-export function PHProvider({ children }) {
+export const PHProvider: React.FC<PropsWithChildren> = ({ children }) => {
   return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
-}
+};
 
 export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
   return (
