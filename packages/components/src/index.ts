@@ -2,6 +2,15 @@
 
 export { Avatar } from "./components/Avatar";
 export { Button } from "./components/Button";
+export {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  type CardProps,
+} from "./components/Card";
 export { Container } from "./components/Container";
 export { Checkbox } from "./components/Checkbox";
 export { Center } from "./components/Center";

@@ -1,5 +1,4 @@
-"use client";
-
+import "server-only";
 import * as React from "react";
 import { cn } from "@/utils/cn";
 

@@ -1,5 +1,4 @@
-"use client";
-
+import "server-only";
 import React from "react";
 import { AsProps } from "@/types/as";
 import { cn } from "@/utils/cn";

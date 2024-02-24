@@ -3,7 +3,7 @@ import { initTRPC } from "@trpc/server";
 import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 import superjson from "superjson";
-import { ironSessionOptions } from "@/constants/iron-session";
+import { ironSessionOptions } from "@/constants/ironSession";
 import { Session } from "@/types/session";
 import { createDbClient } from "./services/db";
 

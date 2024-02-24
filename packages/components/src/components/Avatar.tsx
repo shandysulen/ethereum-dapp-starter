@@ -1,13 +1,10 @@
-"use client";
-
+import "server-only";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { VariantProps, cva } from "class-variance-authority";
+import { cva, VariantProps } from "class-variance-authority";
 import makeBlockie from "ethereum-blockies-base64";
 import Image from "next/image";
 import * as React from "react";
-
 import { cn } from "@/utils/cn";
-
 import { SkeletonCircle } from "./SkeletonCircle";
 
 const avatarVariants = cva(

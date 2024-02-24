@@ -1,18 +1,41 @@
+import { cva, type VariantProps } from "class-variance-authority";
 import { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/utils/cn";
 
-export const Spinner: React.FC<ComponentPropsWithoutRef<"svg">> = ({
+const spinnerVariants = cva(
+  "mr-2 animate-spin-fast text-gray-200 dark:text-gray-600",
+  {
+    variants: {
+      variant: {
+        default: "fill-primary",
+        brand: "fill-brand",
+      },
+      size: {
+        sm: "h-5 w-5",
+        lg: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "sm",
+    },
+  },
+);
+
+type SpinnerProps = ComponentPropsWithoutRef<"svg"> &
+  VariantProps<typeof spinnerVariants>;
+
+export const Spinner: React.FC<SpinnerProps> = ({
   className,
+  variant,
+  size,
   ...props
 }) => {
   return (
     <div role='status'>
       <svg
         aria-hidden='true'
-        className={cn(
-          "mr-2 h-5 w-5 animate-spin-fast fill-brand text-gray-200 dark:text-gray-600",
-          className,
-        )}
+        className={cn(spinnerVariants({ variant, size, className }))}
         viewBox='0 0 100 101'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

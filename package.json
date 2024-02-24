@@ -15,8 +15,5 @@
     "clean:web:modules": "pnpm --filter @eds/web clean:modules",
     "clean:web:next": "pnpm --filter @eds/web clean:next",
     "dev:web": "pnpm --filter @eds/web dev"
-  },
-  "devDependencies": {
-    "typescript": "^5.2.2"
   }
 }

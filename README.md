@@ -14,12 +14,6 @@ _Ethereum Dapp Starter is an opinionated boilerplate Next.js 14 starter kit for 
 - [Drizzle](https://orm.drizzle.team/) and [Turso](https://turso.tech/)
 - [Jest](https://jestjs.io) + [Testing Library](https://testing-library.com/)
 
-## Try it out
-
-```bash
-$ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-starter
-```
-
 ## Features
 
 - 🌐 Edge runtime with Next.js, Vercel, and Turso
@@ -34,3 +28,33 @@ $ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-st
 - 🧼 Opinionated [ESLint](https://eslint.org/) config extending Next.js's config
 - ✨ Opinionated [Prettier]() config to sort imports and Tailwind classes
 - 🐶 [Husky](https://typicode.github.io/husky/) pre-commit hook
+
+## Try it out
+
+```bash
+$ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-starter
+```
+
+## Make sure of this
+
+### Use the workspace version of TypeScript
+
+The workspace version of TypeScript enables the Next.js plugin, which hooks into Intellisense to provide
+Next-specific contextual type info. For example, despite not annotating the root `metadata` object with `Metadata`, TypeScript
+will infer this type for us and correct us if we decide to insert anything cheeky.
+![TypeScript cracking the whip](image.png)
+
+## Recommended global installs
+
+_These packages are used in package.json scripts._
+
+```bash
+$ pnpm i -g rimraf dotenv-cli
+```
+
+## Go figure
+
+_This is a scratchboard of small things I'd like to figure out but don't really matter. This section may move to Issues at some point._
+
+- Why doesn't `trpc.invalidate()` work? Likely conflicts with another package consuming `@tanstack/react-query`. Fixing this allows us to remove `useInvalidateQueries`.
+- Remove `ReferenceError: localStorage is not defined` errors that show up due to Coinbase Wallet (WalletConnect)

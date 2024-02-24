@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { type Config } from "tailwindcss";
+
+export default {
   darkMode: ["class"],
   content: [
     "./src/**/*.{ts,tsx}",
@@ -48,12 +49,19 @@ module.exports = {
         header: "var(--height-header)",
       },
       zIndex: {
-        "loading-bar": 10,
+        "loading-bar": "20",
+        navbar: "10",
+      },
+      animation: {
+        "spin-fast": "spin 0.5s linear infinite",
       },
       boxShadow: {
         "lg-top":
           "0 -10px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1)",
+        "md-top":
+          "0 -4px 6px -1px rgb(0 0 0 / 0.1), 0 -2px 4px -2px rgb(0 0 0 / 0.1)",
+        "sm-top": "0 -1px 2px 0 rgb(0 0 0 / 0.05)",
       },
     },
   },
-};
+} as Config;

@@ -1,9 +1,9 @@
-import { PropsWithChildren } from "react";
-import { PropsWithClassName } from "@/types/className";
+import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { cn } from "@/utils/cn";
 
-export interface SmallProps extends PropsWithChildren, PropsWithClassName {}
-
-export const Small: React.FC<SmallProps> = ({ className, ...props }) => {
+export const Small: React.FC<ComponentPropsWithoutRef<"small">> = ({
+  className,
+  ...props
+}) => {
   return <small className={cn("text-xs", className)} {...props} />;
 };

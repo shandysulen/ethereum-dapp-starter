@@ -1,7 +1,6 @@
+import "server-only";
 import { Toaster } from "@eds/components";
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata, Viewport } from "next";
-import { AxiomWebVitals } from "next-axiom";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import { Footer } from "./_components/Footer";
@@ -12,9 +11,14 @@ import { PostHogPageview, Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  applicationName: "Ethereum Dapp Starter",
-  description: "A strong foundation for your next unicorn project.",
+/* MAKE SURE TO FILL THESE OUT */
+const name = "Todo app";
+const description = "Manage your life.";
+/* *************************** */
+
+export const metadata = {
+  applicationName: name,
+  description,
   generator: "Next.js",
   manifest: "/site.webmanifest",
   metadataBase: new URL(
@@ -23,29 +27,29 @@ export const metadata: Metadata = {
       : "http://localhost:3000",
   ),
   openGraph: {
-    title: "Ethereum Dapp Starter",
-    description: "A strong foundation for your next unicorn project.",
+    title: name,
+    description,
     url: `https://${process.env.VERCEL_URL}`,
-    siteName: "Ethereum Dapp Starter",
+    siteName: name,
     locale: "en_US",
     type: "website",
     images: [],
   },
   title: {
-    template: "%s | Ethereum Dapp Starter",
-    default: "A strong foundation for your next unicorn project.",
+    template: `%s | ${name}`,
+    default: description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "A strong foundation for your next unicorn project.",
-    description: "A strong foundation for your next unicorn project.",
+    title: description,
+    description,
     creator: "",
     creatorId: "",
     images: [""],
   },
 };
 
-export const viewport: Viewport = {
+export const viewport = {
   themeColor: "#FFFFFF",
 };
 

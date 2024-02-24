@@ -1,5 +1,6 @@
-import { cn } from "@/utils/cn";
+import "server-only";
 import { ComponentPropsWithoutRef } from "react";
+import { cn } from "@/utils/cn";
 
 export const Skeleton: React.FC<ComponentPropsWithoutRef<"div">> = ({
   className,

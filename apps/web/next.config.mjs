@@ -1,6 +1,5 @@
 // @ts-check
 import bundleAnalyzer from "@next/bundle-analyzer";
-import { withAxiom } from "next-axiom";
 import "./src/env.mjs";
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -9,7 +8,6 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import("next").NextConfig} */
 const config = {
-  reactStrictMode: true,
   transpilePackages: ["@eds/components"],
   images: {
     remotePatterns: [
@@ -21,9 +19,12 @@ const config = {
     ],
   },
   experimental: {
-    typedRoutes: false,
     swcPlugins: [["next-superjson-plugin", {}]],
-    // serverComponentsExternalPackages: ["@libsql/client"],
+  },
+  webpack: (config) => {
+    // https://docs.family.co/connectkit/getting-started#getting-started-nextjs
+    config.resolve.fallback = { fs: false, net: false, tls: false };
+    return config;
   },
 };
-export default withAxiom(withBundleAnalyzer(config));
+export default withBundleAnalyzer(config);

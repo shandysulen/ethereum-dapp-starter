@@ -5,8 +5,8 @@ import {
   NavigationMenuContentLinkItem,
   NavigationMenuItem,
   NavigationMenuTrigger,
-  Separator,
-} from "@eds/components";
+} from "@eds/components/src/components/NavigationMenu";
+import { Separator } from "@eds/components/src/components/Separator";
 import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
 import React from "react";
 import { Socials } from "@/app/_shared/Socials";

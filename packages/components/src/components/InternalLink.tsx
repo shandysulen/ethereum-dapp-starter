@@ -2,8 +2,7 @@
 
 import { cva } from "class-variance-authority";
 import NextLink, { LinkProps } from "next/link";
-import React, { PropsWithChildren } from "react";
-import { PropsWithClassName } from "@/types/className";
+import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { cn } from "@/utils/cn";
 
 export const linkVariants = cva(
@@ -12,8 +11,8 @@ export const linkVariants = cva(
 
 export interface InternalLinkProps
   extends LinkProps,
-    PropsWithChildren<unknown>,
-    PropsWithClassName {}
+    PropsWithChildren,
+    Omit<ComponentPropsWithoutRef<"a">, "href"> {}
 
 export const InternalLink: React.FC<InternalLinkProps> = ({
   className,
