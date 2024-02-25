@@ -1,3 +1,4 @@
+import "server-only";
 import { memo } from "react";
 import { DesktopNavbar } from "./Navbar/DesktopNavbar";
 

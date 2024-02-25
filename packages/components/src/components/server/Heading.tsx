@@ -1,5 +1,3 @@
-"use client";
-
 import { cva, VariantProps } from "class-variance-authority";
 import { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/utils/cn";

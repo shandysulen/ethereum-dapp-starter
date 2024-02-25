@@ -1,4 +1,9 @@
-import { Center, Heading, HStack, Separator } from "@eds/components";
+import {
+  Center,
+  Heading,
+  HStack,
+  Separator,
+} from "@eds/components/src/components/server";
 
 export default function NotFound() {
   return (

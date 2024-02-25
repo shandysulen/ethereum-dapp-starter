@@ -1,3 +1,4 @@
+import "server-only";
 import React from "react";
 
 export const Description: React.FC = () => {

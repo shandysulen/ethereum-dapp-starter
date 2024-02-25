@@ -1,4 +1,4 @@
-import { HStack } from "@eds/components";
+import { HStack } from "@eds/components/src/components/server";
 import { cn } from "@/utils/cn";
 import { GithubLink } from "./Socials/GithubLink";
 import { TwitterLink } from "./Socials/TwitterLink";

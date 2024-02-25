@@ -5,12 +5,11 @@ import {
   NavigationMenuContentLinkItem,
   NavigationMenuItem,
   NavigationMenuTrigger,
-} from "@eds/components/src/components/NavigationMenu";
-import { Separator } from "@eds/components/src/components/Separator";
+  Separator,
+} from "@eds/components";
 import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
 import React from "react";
 import { Socials } from "@/app/_shared/Socials";
-import { useTriggerFix } from "@/hooks/useTriggerFix";
 
 export interface NavItemProps {
   label: string;
@@ -44,11 +43,9 @@ export const INTERNAL_NAV_ITEMS: NavItemProps[] = [
 
 /** Menu for navbar items */
 export const OverflowNav: React.FC = () => {
-  const fix = useTriggerFix();
-
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger {...fix}>
+      <NavigationMenuTrigger>
         <CircleEllipsis size='24px' className='text-primary' />
       </NavigationMenuTrigger>
       <NavigationMenuContent className='px-2 py-2'>

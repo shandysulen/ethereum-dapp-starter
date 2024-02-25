@@ -1,5 +1,3 @@
-import "server-only";
-import { Toaster } from "@eds/components";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
@@ -7,13 +5,14 @@ import { Footer } from "./_components/Footer";
 import { LoadingBar } from "./_components/LoadingBar";
 import { Navbar } from "./_components/Navbar";
 import "./globals.css";
+import { Toaster } from "@eds/components";
 import { PostHogPageview, Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 /* MAKE SURE TO FILL THESE OUT */
-const name = "Todo app";
-const description = "Manage your life.";
+const name = "Ethereum Dapp Starter";
+const description = "Build the future.";
 /* *************************** */
 
 export const metadata = {
@@ -37,11 +36,11 @@ export const metadata = {
   },
   title: {
     template: `%s | ${name}`,
-    default: description,
+    default: `${name} | ${description}`,
   },
   twitter: {
     card: "summary_large_image",
-    title: description,
+    title: name,
     description,
     creator: "",
     creatorId: "",
@@ -69,7 +68,6 @@ export default function RootLayout({
           <Toaster />
         </Providers>
         <Analytics />
-        <AxiomWebVitals />
         <Suspense>
           <PostHogPageview />
         </Suspense>

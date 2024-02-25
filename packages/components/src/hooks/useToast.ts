@@ -1,6 +1,9 @@
 // Inspired by react-hot-toast library
 import * as React from "react";
-import type { ToastActionElement, ToastProps } from "../components/Toast";
+import type {
+  ToastActionElement,
+  ToastProps,
+} from "../components/client/Toast";
 
 const TOAST_LIMIT = 1;
 export const TOAST_REMOVE_DELAY = 10_000; // 10 seconds

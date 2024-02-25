@@ -1,9 +1,8 @@
 {
   "name": "@eds/components",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Component library for Ethereum Dapp Starter",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "src/components/index",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",

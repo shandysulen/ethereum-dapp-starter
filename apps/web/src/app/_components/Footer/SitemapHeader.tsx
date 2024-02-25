@@ -1,4 +1,4 @@
-import { Heading } from "@eds/components";
+import { Heading } from "@eds/components/src/components/server";
 import type { PropsWithChildren } from "react";
 
 export const SitemapHeader: React.FC<PropsWithChildren> = ({ children }) => (
