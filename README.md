@@ -40,9 +40,7 @@ $ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-st
 ### Use the workspace version of TypeScript
 
 The workspace version of TypeScript enables the Next.js plugin, which hooks into Intellisense to provide
-Next-specific contextual type info. For example, despite not annotating the root `metadata` object with `Metadata`, TypeScript
-will infer this type for us and correct us if we decide to insert anything cheeky.
-![TypeScript cracking the whip](image.png)
+Next-specific contextual type info. [This video](https://www.youtube.com/watch?v=pqMqn9fKEf8) explains the plugin's benefits well.
 
 ## Recommended global installs
 
