@@ -9,7 +9,6 @@ const config = {
   parserOptions: {
     project: true,
   },
-  plugins: ["@typescript-eslint"],
 };
 
 module.exports = config;
