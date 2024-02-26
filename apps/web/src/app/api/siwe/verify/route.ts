@@ -1,10 +1,11 @@
-import "siwe";
 import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 import { SiweMessage } from "siwe";
 import { z } from "zod";
 import { ironSessionOptions } from "@/constants/ironSession";
 import { Session } from "@/types/session";
+
+export const runtime = "edge";
 
 const verifyBody = z.object({
   message: z.string(),
