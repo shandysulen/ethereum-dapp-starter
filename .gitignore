@@ -36,7 +36,7 @@ yarn-error.log*
 
 # local env files
 # do not commit any .env files to git, except for the .env file with defaults. https://create.t3.gg/en/usage/env-variables#using-environment-variables
-.env*.local
+.env*
 local.db
 
 # vercel
