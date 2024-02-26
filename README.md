@@ -66,3 +66,5 @@ _This is a scratchboard of small things I'd like to figure out but don't really 
 
 - Why doesn't `trpc.invalidate()` work? Likely conflicts with another package consuming `@tanstack/react-query`. Fixing this allows us to remove `useInvalidateQueries`.
 - Remove `ReferenceError: localStorage is not defined` errors that show up due to Coinbase Wallet (WalletConnect)
+- Mismatch between client and server HTML with `next-themes`
+- Correctly type `noRefetch.ts`
