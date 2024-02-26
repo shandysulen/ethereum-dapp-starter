@@ -1,3 +1,5 @@
+"use client";
+
 import { Center, Heading, HStack, Separator } from "@eds/components";
 
 export default function NotFound() {
