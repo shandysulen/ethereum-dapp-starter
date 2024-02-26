@@ -35,6 +35,16 @@ _Ethereum Dapp Starter is an opinionated boilerplate Next.js 14 starter kit for 
 $ pnpm create next-app --example https://github.com/shandysulen/ethereum-dapp-starter
 ```
 
+## Deployment
+
+To deploy on [Vercel](https://vercel.com), you must configure the _General_ settings:
+
+1. Select Next.js as the _Framework Preset_
+2. Override _Build Command_ with `pnpm build`
+3. Override _Install Command_ with `pnpm install`
+4. Set the _Root Directory_ to `apps/web`
+5. Check _Include source files outside of the Root Directory..._
+
 ## Make sure of this
 
 ### Use the workspace version of TypeScript
