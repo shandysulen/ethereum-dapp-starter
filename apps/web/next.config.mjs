@@ -18,9 +18,6 @@ const config = {
       },
     ],
   },
-  experimental: {
-    swcPlugins: [["next-superjson-plugin", {}]],
-  },
   webpack: (config) => {
     // https://docs.family.co/connectkit/getting-started#getting-started-nextjs
     config.resolve.fallback = { fs: false, net: false, tls: false };
