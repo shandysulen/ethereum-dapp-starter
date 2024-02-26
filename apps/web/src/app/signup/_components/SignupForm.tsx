@@ -12,6 +12,7 @@ import {
   Input,
 } from "@eds/components";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -31,24 +32,28 @@ export const SignupForm: React.FC = () => {
     },
   });
 
-  const onSubmit = async (data: FormSchema) => {
-    try {
-      const response = await fetch("/api/auth", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+  const submitHandler = useCallback(() => {
+    const onSubmit = async (data: FormSchema) => {
+      try {
+        const response = await fetch("/api/auth", {
+          method: "POST",
+          body: JSON.stringify(data),
+        });
 
-      if (!response.ok) {
-        throw new Error("Failed to signup.");
+        if (!response.ok) {
+          throw new Error("Failed to signup.");
+        }
+      } catch (err) {
+        console.error(err);
       }
-    } catch (err) {
-      console.error(err);
-    }
-  };
+    };
+
+    form.handleSubmit(onSubmit);
+  }, [form]);
 
   return (
     <Form {...form}>
-      <form onSubmit={void form.handleSubmit(onSubmit)}>
+      <form onSubmit={submitHandler}>
         <FormField
           control={form.control}
           name='username'

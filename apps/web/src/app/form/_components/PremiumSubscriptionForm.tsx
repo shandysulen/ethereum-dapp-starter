@@ -13,6 +13,7 @@ import {
   Input,
 } from "@eds/components";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -34,15 +35,19 @@ export const PremiumSubscriptionForm: React.FC = () => {
     },
   });
 
-  function onSubmit(data: FormSchema) {
-    Object.entries(data).forEach(([key, value]) => {
-      console.log(`${key}: ${value}`);
-    });
-  }
+  const submitHandler = useCallback(() => {
+    const onSubmit = (data: FormSchema) => {
+      Object.entries(data).forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+      });
+    };
+
+    form.handleSubmit(onSubmit);
+  }, [form]);
 
   return (
     <Form {...form}>
-      <form onSubmit={void form.handleSubmit(onSubmit)}>
+      <form onSubmit={submitHandler}>
         <FormField
           control={form.control}
           name='name'
