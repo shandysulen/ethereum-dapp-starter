@@ -50,9 +50,9 @@ _These packages are used in package.json scripts._
 $ pnpm i -g rimraf dotenv-cli
 ```
 
-## Go figure
+## High effort, low reward
 
-_This is a scratchboard of small things I'd like to figure out but don't really matter. This section may move to Issues at some point._
+_This is a scratchboard of small things I'd like to figure out but don't really drive much value. This section may move to Issues at some point._
 
 - Why doesn't `trpc.invalidate()` work? Likely conflicts with another package consuming `@tanstack/react-query`. Fixing this allows us to remove `useInvalidateQueries`.
 - Remove `ReferenceError: localStorage is not defined` errors that show up due to Coinbase Wallet (WalletConnect)

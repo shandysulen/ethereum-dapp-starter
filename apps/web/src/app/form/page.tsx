@@ -1,4 +1,4 @@
-import { Container, Heading } from "@eds/components/src/components/server";
+import { Container, Heading } from "@eds/components";
 import { PremiumSubscriptionForm } from "./_components/PremiumSubscriptionForm";
 
 export default function FormPage() {

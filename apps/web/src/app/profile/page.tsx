@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Heading } from "@eds/components/src/components/server";
+import { Container, Heading } from "@eds/components";
 import { useAccount } from "wagmi";
 
 export default function ProfilePage() {

@@ -4,7 +4,6 @@ export {
   AccordionItem,
   AccordionTrigger,
 } from "./Accordion";
-export { AnimationItem } from "./AnimationItem";
 export { Avatar } from "./Avatar";
 export { Button, type ButtonProps } from "./Button";
 export {

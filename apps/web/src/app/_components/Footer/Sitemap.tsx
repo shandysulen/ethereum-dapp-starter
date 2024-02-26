@@ -1,5 +1,4 @@
-import { InternalLink } from "@eds/components";
-import { HStack } from "@eds/components/src/components/server";
+import { HStack, InternalLink } from "@eds/components";
 
 export const Sitemap: React.FC = () => {
   return (

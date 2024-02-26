@@ -1,4 +1,4 @@
-import { Container, Heading } from "@eds/components/src/components/server";
+import { Container, Heading } from "@eds/components";
 import { SignupForm } from "./_components/SignupForm";
 
 export default function SignupPage() {

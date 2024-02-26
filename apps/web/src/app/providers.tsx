@@ -92,9 +92,9 @@ export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
         <TrpcQueryClientProvider>
           <SIWEProvider {...siweConfig}>
             <ConnectKitProvider>
-              {/* <ThemeProvider defaultTheme='system' attribute='class'> */}
-              <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
-              {/* </ThemeProvider> */}
+              <ThemeProvider defaultTheme='system' attribute='class'>
+                <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+              </ThemeProvider>
             </ConnectKitProvider>
           </SIWEProvider>
         </TrpcQueryClientProvider>

@@ -1,15 +1,14 @@
-import { PropsWithChildren } from "react";
+import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { cn } from "@/utils/cn";
 
-export interface ContainerProps {
+export interface ContainerProps extends ComponentPropsWithoutRef<"div"> {
   readonly size: "sm" | "md" | "lg" | "xl";
-  readonly className?: string;
 }
 
 export const Container: React.FC<PropsWithChildren<ContainerProps>> = ({
   size,
   className,
-  children,
+  ...props
 }) => {
   return (
     <div
@@ -23,8 +22,7 @@ export const Container: React.FC<PropsWithChildren<ContainerProps>> = ({
         },
         className,
       )}
-    >
-      {children}
-    </div>
+      {...props}
+    ></div>
   );
 };
