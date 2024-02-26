@@ -13,6 +13,9 @@ const inter = Inter({ subsets: ["latin"] });
 /* MAKE SURE TO FILL THESE OUT */
 const name = "Ethereum Dapp Starter";
 const description = "Build the future.";
+const url = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
 /* *************************** */
 
 export const metadata = {
@@ -20,15 +23,11 @@ export const metadata = {
   description,
   generator: "Next.js",
   manifest: "/site.webmanifest",
-  metadataBase: new URL(
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000",
-  ),
+  metadataBase: new URL(url),
   openGraph: {
     title: name,
     description,
-    url: `https://${process.env.VERCEL_URL}`,
+    url,
     siteName: name,
     locale: "en_US",
     type: "website",
