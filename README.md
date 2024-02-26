@@ -57,7 +57,7 @@ Next-specific contextual type info. [This video](https://www.youtube.com/watch?v
 _These packages are used in package.json scripts._
 
 ```bash
-$ pnpm i -g rimraf dotenv-cli
+$ pnpm i -g rimraf dotenv-cli cross-env
 ```
 
 ## High effort, low reward
