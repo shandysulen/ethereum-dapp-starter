@@ -1,13 +1,14 @@
 "use client";
 
+import { Monitor, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+
 import {
   NavigationMenuContent,
   NavigationMenuContentButtonItem,
   NavigationMenuItem,
   NavigationMenuTrigger,
 } from "@eds/components";
-import { Monitor, Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 
 export const ThemeMenu: React.FC = () => {
   const { theme, setTheme } = useTheme();

@@ -1,9 +1,5 @@
 "use client";
 
-import { PopoverContent } from "@radix-ui/react-popover";
-import { Check, ChevronDown } from "lucide-react";
-import * as React from "react";
-import { cn } from "@/utils/cn";
 import {
   Button,
   Command,
@@ -15,6 +11,11 @@ import {
   PopoverTrigger,
   type PopoverTriggerProps,
 } from ".";
+import { PopoverContent } from "@radix-ui/react-popover";
+import { Check, ChevronDown } from "lucide-react";
+import * as React from "react";
+
+import { cn } from "@/utils/cn";
 
 export interface Item {
   readonly value: string;

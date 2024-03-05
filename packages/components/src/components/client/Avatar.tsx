@@ -5,8 +5,9 @@ import { cva, VariantProps } from "class-variance-authority";
 import makeBlockie from "ethereum-blockies-base64";
 import Image from "next/image";
 import * as React from "react";
-import { cn } from "@/utils/cn";
+
 import { SkeletonCircle } from "../server/SkeletonCircle";
+import { cn } from "@/utils/cn";
 
 const avatarVariants = cva(
   "relative flex shrink-0 overflow-hidden rounded-full",

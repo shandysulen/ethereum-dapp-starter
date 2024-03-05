@@ -1,5 +1,6 @@
 // app/posthog.js
 import { PostHog } from "posthog-node";
+
 import { env } from "@/env.mjs";
 
 export default function PostHogClient() {

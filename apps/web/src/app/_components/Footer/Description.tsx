@@ -1,6 +1,6 @@
 export const Description: React.FC = () => {
   return (
-    <p className='max-w-xl px-[5%] text-center text-sm self-end'>
+    <p className='max-w-xl self-end px-[5%] text-center text-sm'>
       Build the future with ❤️
     </p>
   );

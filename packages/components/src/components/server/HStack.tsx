@@ -1,4 +1,5 @@
 import React from "react";
+
 import { AsProps } from "@/types/as";
 import { cn } from "@/utils/cn";
 
@@ -15,7 +16,7 @@ export const HStack: React.FC<HStackProps> = ({
   const Comp = as ?? "div";
 
   return (
-    <Comp className={cn("flex gap-2 items-center", className)} {...props}>
+    <Comp className={cn("flex items-center gap-2", className)} {...props}>
       {children}
     </Comp>
   );

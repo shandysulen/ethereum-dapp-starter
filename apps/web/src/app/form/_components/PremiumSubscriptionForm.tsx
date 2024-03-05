@@ -1,5 +1,10 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMemo } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
 import {
   Button,
   Checkbox,
@@ -12,10 +17,6 @@ import {
   FormMessage,
   Input,
 } from "@eds/components";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMemo } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 const formSchema = z.object({
   name: z.string().min(1, "Must provide a name."),

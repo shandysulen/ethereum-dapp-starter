@@ -1,4 +1,5 @@
 import { HStack, Stack } from "@eds/components";
+
 import { GithubLink } from "../_shared/Socials/GithubLink";
 import { TwitterLink } from "../_shared/Socials/TwitterLink";
 import { Copyright } from "./Footer/Copyright";
@@ -10,7 +11,7 @@ export const Footer: React.FC = () => {
   return (
     <HStack
       as='footer'
-      className='px-[5%] justify-between shadow-lg-top relative w-full items-center gap-4 py-5 h-footer'
+      className='shadow-lg-top h-footer relative w-full items-center justify-between gap-4 px-[5%] py-5'
     >
       <Stack className='gap-0'>
         <HStack className='gap-4'>

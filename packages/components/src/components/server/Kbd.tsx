@@ -1,4 +1,5 @@
 import React from "react";
+
 import { cn } from "@/utils/cn";
 
 export const Kbd: React.FC<React.ComponentPropsWithoutRef<"kbd">> = ({
@@ -8,7 +9,7 @@ export const Kbd: React.FC<React.ComponentPropsWithoutRef<"kbd">> = ({
   return (
     <kbd
       className={cn(
-        "bg-gray-100 rounded-md font-mono border border-b-[3px] text-sm font-bold p-2 whitespace-nowrap",
+        "whitespace-nowrap rounded-md border border-b-[3px] bg-gray-100 p-2 font-mono text-sm font-bold",
         className,
       )}
       {...props}

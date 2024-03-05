@@ -1,8 +1,9 @@
 "use client";
 
 import { forwardRef } from "react";
-import { cn } from "@/utils/cn";
+
 import { buttonVariants } from "./Button";
+import { cn } from "@/utils/cn";
 
 export interface ExternalLinkProps extends React.ComponentPropsWithoutRef<"a"> {
   readonly variant?: "button";

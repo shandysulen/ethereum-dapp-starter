@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import { cn } from "@/utils/cn";
 
 export const Center = React.forwardRef<
@@ -8,7 +9,7 @@ export const Center = React.forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("flex justify-center items-center", className)}
+      className={cn("flex items-center justify-center", className)}
       {...props}
     />
   );

@@ -1,5 +1,6 @@
-import { Tooltip } from "@eds/components";
 import { PropsWithChildren, useEffect, useState } from "react";
+
+import { Tooltip } from "@eds/components";
 
 type CopyFn = (text: string) => Promise<boolean>; // Return success
 

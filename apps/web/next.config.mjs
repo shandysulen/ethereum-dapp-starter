@@ -1,5 +1,6 @@
 // @ts-check
 import bundleAnalyzer from "@next/bundle-analyzer";
+
 import "./src/env.mjs";
 
 const withBundleAnalyzer = bundleAnalyzer({

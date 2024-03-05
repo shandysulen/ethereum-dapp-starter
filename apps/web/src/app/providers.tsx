@@ -1,6 +1,5 @@
 "use client";
 
-import { TooltipProvider } from "@eds/components";
 import {
   ConnectKitProvider,
   getDefaultConfig,
@@ -15,8 +14,11 @@ import { PropsWithChildren, useEffect } from "react";
 import { SiweMessage } from "siwe";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import { mainnet } from "wagmi/chains";
-import { env } from "@/env.mjs";
+
+import { TooltipProvider } from "@eds/components";
+
 import TrpcQueryClientProvider from "./_trpc/TrpcQueryClientProvider";
+import { env } from "@/env.mjs";
 
 const wagmiConfig = createConfig(
   getDefaultConfig({

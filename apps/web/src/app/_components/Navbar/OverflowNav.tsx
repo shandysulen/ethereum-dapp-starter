@@ -1,5 +1,8 @@
 "use client";
 
+import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
+import React from "react";
+
 import {
   NavigationMenuContent,
   NavigationMenuContentLinkItem,
@@ -7,8 +10,7 @@ import {
   NavigationMenuTrigger,
   Separator,
 } from "@eds/components";
-import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
-import React from "react";
+
 import { Socials } from "@/app/_shared/Socials";
 
 export interface NavItemProps {

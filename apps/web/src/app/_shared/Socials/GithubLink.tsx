@@ -1,6 +1,7 @@
-import { ExternalLink } from "@eds/components";
 import { Github } from "lucide-react";
 import React from "react";
+
+import { ExternalLink } from "@eds/components";
 
 export interface GithubLinkProps {
   readonly href: string;
@@ -11,7 +12,7 @@ export const GithubLink: React.FC<GithubLinkProps> = ({ href }) => {
     <ExternalLink
       aria-label='GitHub account'
       href={href}
-      className='hover:opacity-70 transition-opacity'
+      className='transition-opacity hover:opacity-70'
     >
       <Github size={18} />
     </ExternalLink>

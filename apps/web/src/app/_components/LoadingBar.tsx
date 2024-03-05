@@ -19,5 +19,5 @@ export const LoadingBar: React.FC = () => {
     }
   }, [isFetching, isMutating]);
 
-  return <div id='loading-bar' className='z-loading-bar fixed w-full h-1' />;
+  return <div id='loading-bar' className='z-loading-bar fixed h-1 w-full' />;
 };

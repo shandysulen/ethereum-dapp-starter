@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
+
 import { cn } from "@/utils/cn";
 
 export const Small: React.FC<ComponentPropsWithoutRef<"small">> = ({

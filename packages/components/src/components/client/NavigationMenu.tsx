@@ -6,6 +6,7 @@ import { cva } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
 import NextLink from "next/link";
 import * as React from "react";
+
 import { cn } from "@/utils/cn";
 
 export interface NavigationMenuProps
@@ -96,7 +97,7 @@ export const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "left-0 top-0 flex w-full flex-col bg-background md:absolute md:w-auto",
+      "bg-background left-0 top-0 flex w-full flex-col md:absolute md:w-auto",
       className,
     )}
     {...props}

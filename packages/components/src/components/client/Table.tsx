@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+
 import { cn } from "../../utils/cn";
 
 const Table = React.forwardRef<
@@ -43,7 +44,7 @@ const TableFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <tfoot
     ref={ref}
-    className={cn("bg-primary font-medium text-primary-foreground", className)}
+    className={cn("bg-primary text-primary-foreground font-medium", className)}
     {...props}
   />
 ));
@@ -64,7 +65,7 @@ const TableHead = React.forwardRef<
   <th
     ref={ref}
     className={cn(
-      "border-b border-border h-12 px-4 text-left align-middle font-medium text-muted [&:has([role=checkbox])]:pr-0",
+      "border-border text-muted h-12 border-b px-4 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0",
       className,
     )}
     {...props}

@@ -1,6 +1,7 @@
-import { ExternalLink } from "@eds/components";
 import { Twitter } from "lucide-react";
 import React from "react";
+
+import { ExternalLink } from "@eds/components";
 
 export interface TwitterLinkProps {
   readonly username: string;

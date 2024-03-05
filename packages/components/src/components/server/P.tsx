@@ -1,4 +1,5 @@
 import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
+
 import { cn } from "@/utils/cn";
 
 export const P: React.FC<ComponentPropsWithoutRef<"p">> = ({

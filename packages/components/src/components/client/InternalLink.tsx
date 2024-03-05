@@ -3,6 +3,7 @@
 import { cva } from "class-variance-authority";
 import NextLink, { LinkProps } from "next/link";
 import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
+
 import { cn } from "@/utils/cn";
 
 export const linkVariants = cva(

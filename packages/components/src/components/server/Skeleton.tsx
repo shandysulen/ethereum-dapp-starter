@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
+
 import { cn } from "@/utils/cn";
 
 export const Skeleton: React.FC<ComponentPropsWithoutRef<"div">> = ({
@@ -7,7 +8,7 @@ export const Skeleton: React.FC<ComponentPropsWithoutRef<"div">> = ({
 }) => {
   return (
     <div
-      className={cn("animate-pulse rounded-md bg-muted", className)}
+      className={cn("bg-muted animate-pulse rounded-md", className)}
       {...props}
     />
   );

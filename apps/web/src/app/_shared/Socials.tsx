@@ -1,7 +1,8 @@
 import { HStack } from "@eds/components";
-import { cn } from "@/utils/cn";
+
 import { GithubLink } from "./Socials/GithubLink";
 import { TwitterLink } from "./Socials/TwitterLink";
+import { cn } from "@/utils/cn";
 
 export interface SocialsProps {
   readonly className?: string;

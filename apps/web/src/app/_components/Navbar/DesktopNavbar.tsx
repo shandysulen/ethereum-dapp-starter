@@ -1,5 +1,7 @@
-import { HStack, NavigationMenu, NavigationMenuList } from "@eds/components";
 import React from "react";
+
+import { HStack, NavigationMenu, NavigationMenuList } from "@eds/components";
+
 import { LogoLink } from "../Footer/LogoLink";
 import { OverflowNav } from "./OverflowNav";
 

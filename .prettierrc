@@ -4,14 +4,17 @@
   "semi": true,
   "jsxSingleQuote": true,
   "plugins": [
-    "prettier-plugin-tailwindcss",
-    "@ianvs/prettier-plugin-sort-imports"
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
   ],
-  "importOrder": ["<THIRD_PARTY_MODULES>", "^@/", "^[../]"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "importOrderBuiltinModulesToTop": true,
-  "importOrderMergeDuplicateImports": true,
-  "importOrderCombineTypeAndValueImports": true,
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@eds",
+    "",
+    "^(.|..|@)/",
+    "",
+    ".css$"
+  ],
   "tailwindFunctions": ["clsx", "cn", "tw"]
 }

@@ -27,7 +27,7 @@ const RadioButton = React.forwardRef<
     <RadioGroupPrimitive.Item
       ref={ref}
       className={cn(
-        "relative h-8 cursor-default rounded-full px-3 py-1 text-sm font-bold text-primary ring-offset-background transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-slate-200 data-unchecked:hover:opacity-70",
+        "text-primary ring-offset-background focus-visible:ring-ring data-checked:bg-slate-200 data-unchecked:hover:opacity-70 relative h-8 cursor-default rounded-full px-3 py-1 text-sm font-bold transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         className,
       )}
       value={value}
