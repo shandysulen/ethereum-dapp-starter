@@ -1,12 +1,12 @@
-import { TRPCClientError } from "@trpc/client";
 import { initTRPC } from "@trpc/server";
 import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 import superjson from "superjson";
 
-import { createDbClient } from "./services/db";
 import { ironSessionOptions } from "@/constants/ironSession";
 import { Session } from "@/types/session";
+import { TRPCClientError } from "@trpc/client";
+import { createDbClient } from "./services/db";
 
 /**
  * This is the actual context you'll use in your router. It will be used to
@@ -14,12 +14,12 @@ import { Session } from "@/types/session";
  * @link https://trpc.io/docs/context
  */
 export const createContext = async () => {
-  const db = createDbClient();
   const session = await getIronSession<Session>(cookies(), ironSessionOptions);
+  const db = createDbClient();
 
   return {
-    db,
     session,
+    db
   };
 };
 
@@ -29,8 +29,6 @@ const t = initTRPC.context<typeof createContext>().create({
     return shape;
   },
 });
-
-t._config.transformer;
 
 export const router = t.router;
 export const publicProcedure = t.procedure;

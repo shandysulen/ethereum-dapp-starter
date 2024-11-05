@@ -3,7 +3,7 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { appRouter } from "@/server/routers/_app";
 import { createContext } from "@/server/trpc";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const handler = (req: Request) =>
   fetchRequestHandler({

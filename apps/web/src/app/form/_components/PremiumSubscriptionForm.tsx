@@ -7,7 +7,6 @@ import { z } from "zod";
 
 import {
   Button,
-  Checkbox,
   Form,
   FormControl,
   FormDescription,
@@ -17,11 +16,11 @@ import {
   FormMessage,
   Input,
 } from "@eds/components";
+import { trpc } from "@/app/_trpc/client";
 
 const formSchema = z.object({
   name: z.string().min(1, "Must provide a name."),
   email: z.string().email(),
-  yearly: z.boolean(),
 });
 
 export type FormSchema = z.infer<typeof formSchema>;
@@ -32,15 +31,24 @@ export const PremiumSubscriptionForm: React.FC = () => {
     defaultValues: {
       name: "",
       email: "",
-      yearly: false,
+    },
+  });
+
+  const submitForm = trpc.form.submit.useMutation({
+    onMutate: () => {
+      console.log("submitting");
+    },
+    onSuccess: () => {
+      console.log("success");
+    },
+    onError: (err) => {
+      console.log("error", err);
     },
   });
 
   const submitHandler = useMemo(() => {
     const onSubmit = (data: FormSchema) => {
-      Object.entries(data).forEach(([key, value]) => {
-        console.log(`${key}: ${value}`);
-      });
+      submitForm.mutate(data);
     };
 
     return form.handleSubmit(onSubmit);
@@ -48,7 +56,7 @@ export const PremiumSubscriptionForm: React.FC = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className='flex flex-col gap-6'>
         <FormField
           control={form.control}
           name='name'
@@ -71,23 +79,6 @@ export const PremiumSubscriptionForm: React.FC = () => {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder='shandysulen@gmail.com' {...field} />
-              </FormControl>
-              <FormDescription>This is your email.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name='yearly'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Yearly for 0.5 ETH?</FormLabel>
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
               </FormControl>
               <FormDescription>This is your email.</FormDescription>
               <FormMessage />

@@ -8,8 +8,6 @@ import {
 } from "connectkit";
 import { ThemeProvider } from "next-themes";
 import { usePathname, useSearchParams } from "next/navigation";
-import posthog from "posthog-js";
-import { PostHogProvider } from "posthog-js/react";
 import { PropsWithChildren, useEffect } from "react";
 import { SiweMessage } from "siwe";
 import { createConfig, http, WagmiProvider } from "wagmi";
@@ -56,51 +54,18 @@ const siweConfig: SIWEConfig = {
   signOut: async () => fetch("/api/siwe/logout").then((res) => res.ok),
 };
 
-if (typeof window !== "undefined") {
-  posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
-    api_host: env.NEXT_PUBLIC_POSTHOG_HOST,
-    capture_pageview: false, // Disable automatic pageview capture, as we capture manually
-  });
-}
-
-export function PostHogPageview() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  // Track pageviews
-  useEffect(() => {
-    if (pathname) {
-      let url = window.origin + pathname;
-      if (searchParams.toString()) {
-        url = url + `?${searchParams.toString()}`; // TODO: consider percent encoding?
-      }
-      posthog.capture("$pageview", {
-        $current_url: url,
-      });
-    }
-  }, [pathname, searchParams]);
-
-  return null;
-}
-
-export const PHProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
-};
-
 export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <PHProvider>
       <WagmiProvider config={wagmiConfig}>
         <TrpcQueryClientProvider>
           <SIWEProvider {...siweConfig}>
             <ConnectKitProvider>
-              <ThemeProvider defaultTheme='system' attribute='class'>
+              <ThemeProvider defaultTheme='light' attribute='class'>
                 <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
               </ThemeProvider>
             </ConnectKitProvider>
           </SIWEProvider>
         </TrpcQueryClientProvider>
       </WagmiProvider>
-    </PHProvider>
   );
 };

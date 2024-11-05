@@ -1,11 +1,10 @@
-import { type InferModel } from "drizzle-orm";
-import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { pgTable, text } from "drizzle-orm/pg-core";
 
-export const accounts = sqliteTable("accounts", {
+export const accounts = pgTable("accounts", {
   id: text("id").primaryKey(),
-  address: text("address", { length: 42 }).notNull(), // should be unique
+  address: text("address").notNull(), // should be unique
   joinedDate: text("joined_date").notNull(),
 });
 
-export type DbAccount = InferModel<typeof accounts>; // return type when queried
-export type NewDbAccount = InferModel<typeof accounts, "insert">; // return type when inserted
+// export type DbAccount = InferModel<typeof accounts>; // return type when queried
+// export type NewDbAccount = InferModel<typeof accounts, "insert">; // return type when inserted

@@ -1,16 +1,12 @@
-import type { Config } from "drizzle-kit";
+import { defineConfig } from 'drizzle-kit';
 
 import { env } from "@/env.mjs";
 
-export default {
-  schema: "./src/schemas/*",
+export default defineConfig({
+  dialect: "postgresql",
   out: "./drizzle",
-  driver: "turso",
+  schema: "./src/schemas/*",
   dbCredentials: {
-    url: env.DB_URL as string,
-    authToken: env.DB_AUTH_TOKEN as string,
+    url: env.DB_URL,
   },
-  // dbCredentials: {
-  //   url: "file:./local.db",
-  // },
-} satisfies Config;
+})

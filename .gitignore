@@ -44,3 +44,6 @@ local.db
 
 # typescript
 *.tsbuildinfo
+
+# drizzle
+drizzle

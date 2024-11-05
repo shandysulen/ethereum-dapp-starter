@@ -1,13 +1,11 @@
-import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
-import { Suspense } from "react";
 
 import { Toaster } from "@eds/components";
 
 import { Footer } from "./_components/Footer";
 import { LoadingBar } from "./_components/LoadingBar";
 import { Navbar } from "./_components/Navbar";
-import { PostHogPageview, Providers } from "./providers";
+import { Providers } from "./providers";
 
 import "./globals.css";
 
@@ -69,10 +67,6 @@ export default function RootLayout({
           <Footer />
           <Toaster />
         </Providers>
-        <Analytics />
-        <Suspense>
-          <PostHogPageview />
-        </Suspense>
       </body>
     </html>
   );

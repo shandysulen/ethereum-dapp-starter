@@ -1,8 +1,15 @@
+"use client";
+
 import { Container, Heading } from "@eds/components";
 
 import { PremiumSubscriptionForm } from "./_components/PremiumSubscriptionForm";
+import { trpc } from "../_trpc/client";
 
 export default function FormPage() {
+  const { data } = trpc.form.test.useQuery();
+
+  console.log('DATA', data)
+
   return (
     <Container
       size='xl'
